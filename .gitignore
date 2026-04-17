@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+
+# Vite build output (на случай если vite.config.js настроен на dist)
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
