@@ -1,0 +1,24 @@
+{
+  "name": "360tur-landing",
+  "version": "1.0.0",
+  "description": "Проект лендинга компании для демонстрации возможностей сервиса, который предлагает услугу создания виртуальных 3D туров с помощью камер 360 создающих равнопромежуточные (equirectangular) изображения.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imchrm/360tur-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/imchrm/360tur-landing/issues"
+  },
+  "homepage": "https://github.com/imchrm/360tur-landing#readme"
+}
