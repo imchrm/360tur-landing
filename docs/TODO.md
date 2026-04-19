@@ -36,7 +36,7 @@
 - [ ] Переработать `Header.jsx`
 - [ ] Переработать `Hero.jsx` — новая структура секции
 - [ ] Переработать `HowWeWork.jsx`
-- [ ] Переработать `LanguageSwitcher.jsx`
+- [ ] Переработать визуал (layout) `LanguageSwitcher.jsx`
 - [ ] Переработать `LeadForm.jsx`
 - [ ] Переработать `Navigation.jsx`
 - [ ] Переработать `Services.jsx` — под услуги 360tur
