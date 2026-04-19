@@ -40,6 +40,7 @@
 - [`docs/CONTEXT.md`](docs/CONTEXT.md) — контекст проекта, передаётся ассистенту в начале сессии.
 - [`docs/TODO.md`](docs/TODO.md) — задачи по приоритетам и отложенные вопросы.
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — зафиксированные архитектурные решения.
+- [`docs/DESIGN_BRIEF.md`](docs/DESIGN_BRIEF.md) — бриф для дизайн-агента (аудитория, бренд, структура секций, интерактив, SEO).
 - [`docs/CHANGELOG.md`](docs/CHANGELOG.md) — история изменений.
 
 ## Разработка
