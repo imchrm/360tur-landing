@@ -4,6 +4,30 @@
 
 ---
 
+## 2026-04-19 — Развёртка React + Vite проекта в корне, импорт дизайна из Stitch
+
+**Build setup:**
+- В корень добавлены `package.json` (с зависимостями React 18, React Router 6, Vite 5, Tailwind 3), `vite.config.js`, `tailwind.config.js` (палитра и шрифты из `DESIGN_BRIEF.md`), `postcss.config.js`, `index.html` (entry для Vite).
+- `src/main.jsx`, `src/App.jsx` (`BrowserRouter`, единственный маршрут `/`), `src/index.css` (директивы Tailwind + Material Symbols).
+- `npm install`, `npm run build` проходят успешно (≈ 57 КБ gzip JS).
+
+**i18n:**
+- Реализован `src/contexts/LanguageContext.jsx`: автодетект языка по `navigator.language`, персистентность в `localStorage`, хук `useLanguage()` с функцией `t(key)` и поддержкой вложенных ключей.
+- Добавлены `src/locales/ru.js` (полный словарь из дизайна), `uz.js` и `en.js` (временно ре-экспортируют `ru.js` до перевода).
+
+**Компоненты (`src/components/`):**
+- HTML из `design/site_01/code.html` разнесён по компонентам: `Header`, `Navigation`, `LanguageSwitcher` (рабочий, с `LanguageContext`), `Hero`, `AboutCards`, `Services`, `Portfolio`, `FAQ`, `Footer`. Добавлен утилитарный `Icon.jsx` (обёртка над Material Symbols).
+- Все строки вынесены в локали; цвета и шрифты — через токены Tailwind.
+- Известные баги дизайна перенесены в `TODO.md` (Приоритет 4): нечитаемый Hero-заголовок, нерабочий dropdown «Контакты», заглушки соцсетей и iframe портфолио.
+
+**TODO.md:**
+- Закрыты пункты Приоритета 1 (создание `src/`), Приоритета 2 (LanguageSwitcher / Telegram / маршруты / `App.jsx`), частично Приоритета 3 (палитра, шрифты).
+- Добавлены новые приоритеты: «Доводка дизайна» (баги Stitch-импорта), «Недостающие секции» (HowWeWork / Testimonials / About не были сгенерированы Stitch), «Маршруты и юридические страницы», «SEO и аналитика».
+
+**ARCHITECTURE.md:** пути конфигов обновлены — теперь они в корне (раньше отмечалось «сейчас в `musor/`»).
+
+**CONTEXT.md:** актуализированы разделы «Структура репозитория», «Текущее состояние», «Следующий шаг».
+
 ## 2026-04-19 — DESIGN_BRIEF.md: бриф для дизайн-агента
 
 - Создан `docs/DESIGN_BRIEF.md` — структурированный бриф по итогам опроса из 4 фаз: бизнес и аудитория, бренд и визуальный стиль, структура секций и контент, интерактив/анимации/SEO.

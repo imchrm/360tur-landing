@@ -44,50 +44,57 @@
 
 ```
 360tur-landing/
-├── docs/            # Документация и контекст
-├── musor/           # Шаблон проекта
-│   ├── index.html
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── postcss.config.js
-│   ├── public/
-│   │   └── images
-│   ├── README.md
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── components/
-│   │   │   ├── About.jsx
-│   │   │   ├── AboutCards.jsx
-│   │   │   ├── Contact.jsx
-│   │   │   ├── ContactInfo.jsx
-│   │   │   ├── FAQ.jsx
-│   │   │   ├── Footer.jsx
-│   │   │   ├── Header.jsx
-│   │   │   ├── Hero.jsx
-│   │   │   ├── HowWeWork.jsx
-│   │   │   ├── LanguageSwitcher.jsx
-│   │   │   ├── LeadForm.jsx
-│   │   │   ├── Navigation.jsx
-│   │   │   ├── Services.jsx
-│   │   │   └── Testimonials.jsx
-│   │   ├── contexts/
-│   │   │   └── LanguageContext.jsx
-│   │   ├── index.css
-│   │   ├── index.jsx
-│   │   ├── locales/
-│   │   │   ├── ru.js
-│   │   │   └── uz.js
-│   │   └── pages/
-│   │       ├── About.jsx
-│   │       ├── ConstructionWaste.jsx
-│   │       ├── Contact.jsx
-│   │       ├── Home.jsx
-│   │       └── HouseholdWaste.jsx
-│   ├── tailwind.config.js
-│   └── vite.config.js
+├── design/                       # Исходники дизайна (HTML-экспорт из Stitch)
+│   ├── site_01/
+│   │   ├── DESIGN.md
+│   │   ├── code.html
+│   │   ├── room00.png
+│   │   └── screen.png
+│   └── site_02/
+│       ├── DESIGN.md
+│       ├── code.html
+│       └── screen.png
+├── docs/                         # Документация и контекст
+│   ├── ARCHITECTURE.md
+│   ├── CHANGELOG.md
+│   ├── CONTEXT.md
+│   ├── DESIGN_BRIEF.md
+│   ├── TODO.md
+│   └── templates/
+│       └── landing-design-brief-questionnaire.md
+├── musor/                        # Старый шаблон (источник для миграции, постепенно удаляется)
+│   └── ...
+├── src/                          # Исходный код приложения (React + Vite)
+│   ├── App.jsx                   # роутер, маршруты
+│   ├── main.jsx                  # точка входа, монтирование, провайдеры
+│   ├── index.css                 # tailwind директивы + global styles
+│   ├── components/
+│   │   ├── AboutCards.jsx
+│   │   ├── FAQ.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Header.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Icon.jsx              # обёртка над Material Symbols Outlined
+│   │   ├── LanguageSwitcher.jsx
+│   │   ├── Navigation.jsx
+│   │   ├── Portfolio.jsx
+│   │   └── Services.jsx
+│   ├── contexts/
+│   │   └── LanguageContext.jsx   # i18n: detect, persist, t()
+│   ├── locales/
+│   │   ├── en.js                 # пока ре-экспорт ru.js (TODO: перевод)
+│   │   ├── ru.js
+│   │   └── uz.js                 # пока ре-экспорт ru.js (TODO: перевод)
+│   └── pages/
+│       └── Home.jsx              # композиция всех секций
 ├── .gitignore
-├── package.json     # создан командой `npm init -y` в корне репозитория
-└── README.md
+├── README.md
+├── index.html                    # Vite entry HTML
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+└── vite.config.js
 ```
 
 ## Ветки [стабильный]
@@ -99,20 +106,25 @@
 
 ## Текущее состояние [ОБНОВЛЯТЬ]
 
-- Scaffold из шаблона `musor/` перенесён в репозиторий, первые коммиты запушены; ветка по умолчанию — `main`.
-- В корне репозитория выполнен `npm init -y` (создан `package.json`).
-- Папка `docs/` наполнена: `CONTEXT.md`, `TODO.md`, `ARCHITECTURE.md`, `CHANGELOG.md` согласованы между собой (см. `CHANGELOG.md` — запись 2026-04-19).
-- Зафиксированы ключевые архитектурные решения: SPA + `BrowserRouter`, i18n на React Context + плоских словарях (ru / uz / en), state через `useState` + Context API, импортируемые ассеты в `src/assets/`.
-- Очистка шаблона ещё не начата; код и конфиги остаются внутри `musor/`.
-- Открытые вопросы (форма обратной связи, аналитика, платформа деплоя) централизованы в `TODO.md`.
+- В корне репозитория развёрнут рабочий **React + Vite + Tailwind**-проект: `package.json` со скриптами `dev / build / preview`, конфиги (`vite.config.js`, `tailwind.config.js`, `postcss.config.js`), `index.html`-entry для Vite.
+- Реализована **i18n-инфраструктура**: `src/contexts/LanguageContext.jsx` с автодетектом по `Accept-Language`, `localStorage`-персистентностью и хуком `useLanguage()`; `src/locales/{ru,uz,en}.js` (uz/en временно ре-экспортируют ru до перевода).
+- HTML из `design/site_01/code.html` разнесён по компонентам: `Header / Navigation / LanguageSwitcher / Hero / AboutCards / Services / Portfolio / FAQ / Footer`. Все тексты вынесены в `ru.js`.
+- Маршрутизация: `BrowserRouter`, единственный маршрут `/` → `pages/Home.jsx`. Заглушки под `/privacy`, `/terms` — TODO.
+- Старый шаблон `musor/` остаётся как референс; будет удалён после стабилизации миграции.
+- Открытые вопросы централизованы в `TODO.md`.
+- Известные баги (из дизайна, исправляются отдельно): нечитаемый Hero-заголовок поверх фото, кнопка «Контакты» (нужна реализация в виде dropdown), портфолио без реального iframe, отсутствие реальных ссылок на соцсети и номеров телефона.
 
 ## Следующий шаг [ОБНОВЛЯТЬ]
 
-Завершить Приоритет 1 из `TODO.md` («Приготовление»):
-- составить описание проекта и внести в `README.md`;
-- создать рабочую папку с исходниками проекта (мигрировать из шаблона `musor/`).
+Закрыть зафиксированные баги дизайна:
+- Сделать Hero-заголовок читаемым на фоне фото (text-shadow / glow / overlay).
+- Реализовать выпадающее меню «Контакты» в хедере (телефон + мессенджеры).
+- Подставить реальные ссылки на соцсети и номера телефонов.
+- Подключить рабочий встраиваемый тур (`Portfolio` iframe) с `360tur.uz`.
 
-Затем перейти к Приоритету 2 («Очистка шаблона»): модифицировать `LanguageSwitcher` под `ru / uz / en`, удалить логику Telegram-бота из `Contact.jsx`, убрать лишние маршруты и страницы, проверить `App.jsx` на мёртвый код.
+Параллельно:
+- Перевести строки на `uz` и `en` (пока локали ре-экспортируют `ru`).
+- Завершить Приоритет 3 (брендинг — favicon, meta-теги).
 
 ---
 
