@@ -5,8 +5,8 @@ import Icon from './Icon.jsx';
 // TODO: подставить реальные URL соцсетей и бота
 const CONTACTS = [
   { label: 'Telegram bot', href: 'https://t.me/username' },
-  { label: 'Instagram', href: 'http://instagran.com' },
-  { label: 'Facebook', href: 'http://facebook.com' },
+  { label: 'Instagram', href: 'https://instagram.com' },
+  { label: 'Facebook', href: 'https://facebook.com' },
 ];
 
 export default function ContactsDropdown() {
