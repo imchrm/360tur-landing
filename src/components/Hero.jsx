@@ -21,6 +21,8 @@ export default function Hero() {
           role="img"
           aria-label="Modern luxury interior preview"
         />
+        {/* Затемняющий градиент: отделяет текст слева от фона */}
+        <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent" />
         <div className="relative z-10 flex flex-col items-center gap-4 opacity-50 lg:ml-auto lg:mr-32">
           <Icon name="360" className="text-6xl text-primary" />
           <span className="font-label text-primary font-medium">
@@ -31,7 +33,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 py-16 md:py-24 w-full">
         <div className="max-w-2xl space-y-8">
-          <h1 className="font-headline text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-primary">
+          <h1 className="font-headline text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-primary text-glow-surface">
             {t('hero.title')}
           </h1>
           <p className="font-body text-xl text-on-surface-variant font-medium">
