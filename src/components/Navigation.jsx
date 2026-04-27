@@ -6,20 +6,26 @@ const ITEMS = [
   { id: 'faq', key: 'nav.faq' },
 ];
 
-export default function Navigation() {
+export default function Navigation({ active, onNavigate }) {
   const { t } = useLanguage();
 
   return (
     <nav className="hidden md:flex items-center gap-8">
-      {ITEMS.map(({ id, key }) => (
-        <a
-          key={id}
-          href={`#${id}`}
-          className="text-on-surface opacity-70 font-label hover:text-primary hover:opacity-100 transition-all duration-300"
-        >
-          {t(key)}
-        </a>
-      ))}
+      {ITEMS.map(({ id, key }) => {
+        const isActive = active === id;
+        return (
+          <a
+            key={id}
+            href={`#${id}`}
+            onClick={(e) => onNavigate(e, id)}
+            className={`inline-block font-label transition-all duration-300 hover:text-primary hover:scale-105 ${
+              isActive ? 'text-primary font-bold opacity-100' : 'text-on-surface opacity-70 hover:opacity-100'
+            }`}
+          >
+            {t(key)}
+          </a>
+        );
+      })}
     </nav>
   );
 }
