@@ -5,7 +5,7 @@ import en from '../locales/en.js';
 
 const DICTIONARIES = { ru, uz, en };
 const SUPPORTED = ['ru', 'uz', 'en'];
-const DEFAULT_LANG = 'ru';
+const DEFAULT_LANG = 'uz';
 const STORAGE_KEY = 'lang';
 
 const LanguageContext = createContext(null);
