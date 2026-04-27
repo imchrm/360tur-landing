@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>360tur.uz - Виртуальные 3D-туры для вашего бизнеса</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#5C092C',
+                    'primary-container': '#5C092C',
+                    'on-primary': '#FFFFFF',
+                    surface: '#FFFFFF',
+                    'on-surface': '#131313',
+                    'on-surface-variant': '#4b5563',
+                    'surface-container': '#f3f4f6',
+                    'surface-container-low': '#f9fafb',
+                    'surface-container-lowest': '#FFFFFF',
+                    'outline-variant': '#d1d5db'
+                }
+            }
+        }
+    }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-[0_12px_40px_rgba(58,0,24,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-on-surface font-headline" style="">
+                360tur.uz
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="nav-link text-on-surface opacity-70 font-label hover:text-primary hover:opacity-100 transition-all duration-300" href="#about">О нас</a>
+<a class="nav-link text-on-surface opacity-70 font-label hover:text-primary hover:opacity-100 transition-all duration-300" href="#services">Услуги</a>
+<a class="nav-link text-on-surface opacity-70 font-label hover:text-primary hover:opacity-100 transition-all duration-300" href="#faq">Вопросы</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative" id="language-switcher">
+<button class="text-on-surface opacity-70 hover:text-primary transition-all duration-300 flex items-center gap-1 p-2 rounded-full hover:bg-surface-container" onclick="document.getElementById('lang-dropdown').classList.toggle('hidden')" style="">
+<span class="material-symbols-outlined" data-icon="language" style="">language</span>
+<span class="font-label text-xs font-bold" style="">RU</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more" style="">expand_more</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-24 bg-white rounded-lg shadow-xl border border-outline-variant/20 overflow-hidden z-[60]" id="lang-dropdown">
+<a class="block px-4 py-2 text-sm font-label text-primary hover:bg-surface-container transition-colors" href="#" style="">RU</a>
+<a class="block px-4 py-2 text-sm font-label text-on-surface-variant hover:bg-surface-container transition-colors" href="#" style="">UZ</a>
+<a class="block px-4 py-2 text-sm font-label text-on-surface-variant hover:bg-surface-container transition-colors" href="#" style="">EN</a>
+</div>
+</div>
+<a class="hidden md:block px-4 py-2 bg-primary text-on-primary font-label font-medium rounded-lg hover:bg-[#6C1C0B] transition-colors" href="#portfolio" style="">Портфолио</a>
+<a class="px-6 py-2 bg-primary text-on-primary font-label font-medium rounded-lg hover:bg-[#6C1C0B] transition-colors scale-95 active:scale-90 shadow-md" href="#contact" style="">Контакты</a>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[819px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0 flex items-center justify-center bg-surface-container-low">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="modern luxury living room interior with large windows and sleek furniture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA678SG2BpmD2B2LZPODAAD1LPVUkjLrik5zcWc0Fw7Xcf1GnSvlQkCYSKWys8jVsnm-Q0L2qaS537-0g8j_D3cYq7hzeTLoPaH-YlmVd5WrbJHW6_s15wQjC_yujLWFtd0jxVYmJybFNLU701r-4GDGx-4b7lCNsmejsi3j2NTS3uYW_dZpv03Y2BrdOcy3-RaQBgo0Apv_7KD8_WPUf3qr8WdDsQ8UKy62CPpShDv6S6C6LVvaGBQvJCqTdUYoBGiAxzqW4vvRFqE");'></div>
+<!-- <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>-->
+<div class="relative z-10 flex flex-col items-center gap-4 opacity-50 lg:ml-auto lg:mr-32">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="360" style="">360</span>
+<span class="font-label text-primary font-medium" style="">Interactive Tour Viewer Placeholder</span>
+</div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 py-16 md:py-24 w-full">
+<div class="max-w-2xl space-y-8">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-tight tracking-tight" style="font-family: 'Manrope', sans-serif; color: #5C092C;">
+                    Виртуальные 3D-туры для вашего бизнеса
+                </h1>
+<p class="font-body text-xl text-on-surface-variant font-medium" style="">
+                    Профессионально, быстро и по разумной цене. Погрузите клиентов в ваше пространство.
+                </p>
+<div class="flex flex-wrap gap-4 items-center">
+<a class="px-8 py-4 bg-primary text-on-primary font-label font-medium rounded-lg hover:shadow-lg transition-all flex items-center gap-2" href="tel:+" style="">
+<span class="material-symbols-outlined" data-icon="call" style="">call</span>
+                        Позвонить
+                    </a>
+<a class="px-8 py-4 bg-primary text-on-primary font-label font-medium rounded-lg hover:shadow-lg transition-all" href="#portfolio" style="">
+                        Портфолио
+                    </a>
+<div class="flex gap-2 ml-4">
+<a class="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors" href="#" style="">
+<span class="material-symbols-outlined" data-icon="chat" style="">chat</span>
+</a>
+<a class="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors" href="#" style="">
+<span class="material-symbols-outlined" data-icon="forum" style="">forum</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About / Why Us -->
+<section class="bg-surface-container-low py-20" id="about">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col gap-4">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="bolt" style="">bolt</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface" style="">Скорость</h3>
+<p class="font-body text-on-surface-variant" style="">Быстрая съемка и сборка туров в кратчайшие сроки.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col gap-4">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="payments" style="">payments</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface" style="">Цена/Качество</h3>
+<p class="font-body text-on-surface-variant" style="">Оптимальное соотношение стоимости и профессионального результата.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col gap-4">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="dns" style="">dns</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface" style="">Свой хостинг</h3>
+<p class="font-body text-on-surface-variant" style="">Надежное хранение ваших 3D-туров на наших серверах.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col gap-4">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="location_on" style="">location_on</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface" style="">Локальное присутствие</h3>
+<p class="font-body text-on-surface-variant" style="">Работаем по всему Узбекистану с глубоким пониманием рынка.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services -->
+<section class="max-w-7xl mx-auto px-8 py-24" id="services">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-16 text-center" style="">Наши Услуги</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+<!-- Service Cards -->
+<div class="bg-surface-container-low rounded-xl p-8 hover:-translate-y-1 transition-transform duration-300 border border-outline-variant/30">
+<h4 class="font-headline text-lg font-bold text-primary mb-4" style="">360° Съемка</h4>
+<p class="font-body text-on-surface-variant" style="">Профессиональная панорамная съемка объектов.</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 hover:-translate-y-1 transition-transform duration-300 border border-outline-variant/30">
+<h4 class="font-headline text-lg font-bold text-primary mb-4" style="">Сборка туров</h4>
+<p class="font-body text-on-surface-variant" style="">Склейка и создание интерактивных переходов.</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 hover:-translate-y-1 transition-transform duration-300 border border-outline-variant/30">
+<h4 class="font-headline text-lg font-bold text-primary mb-4" style="">Интеграция</h4>
+<p class="font-body text-on-surface-variant" style="">Встраивание на сайт и в Google Maps.</p>
+</div>
+</div>
+<!-- Mini Cases -->
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-8" style="">Индустрии</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-6 flex flex-col items-center justify-center text-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="real_estate_agent" style="">real_estate_agent</span>
+<span class="font-label text-sm text-on-surface" style="">Недвижимость</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-6 flex flex-col items-center justify-center text-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="hotel" style="">hotel</span>
+<span class="font-label text-sm text-on-surface" style="">Отели</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-6 flex flex-col items-center justify-center text-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant" style="">restaurant</span>
+<span class="font-label text-sm text-on-surface" style="">HoReCa</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-6 flex flex-col items-center justify-center text-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="museum" style="">museum</span>
+<span class="font-label text-sm text-on-surface" style="">Музеи</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-6 flex flex-col items-center justify-center text-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="school" style="">school</span>
+<span class="font-label text-sm text-on-surface" style="">Образование</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-6 flex flex-col items-center justify-center text-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="storefront" style="">storefront</span>
+<span class="font-label text-sm text-on-surface" style="">Ритейл</span>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="max-w-7xl mx-auto px-8 py-24" id="portfolio">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-6 text-center" style="">Портфолио</h2>
+<p class="font-body text-lg text-on-surface-variant text-center max-w-2xl mx-auto mb-12" style="">
+        Изучите примеры наших работ. Интерактивные 3D-туры позволяют детально рассмотреть каждый уголок вашего бизнеса.
+    </p>
+<div class="relative w-full max-w-5xl mx-auto aspect-video bg-surface-container-low rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(58,0,24,0.06)] mb-12 border border-outline-variant/30">
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-surface-container-lowest z-10 group cursor-pointer hover:bg-surface-container-low transition-colors duration-300">
+<span class="material-symbols-outlined text-6xl text-primary mb-4 group-hover:scale-110 transition-transform duration-300" data-icon="360" style="">360</span>
+<span class="font-headline text-2xl font-bold text-on-surface mb-2" style="">Пример виртуального тура</span>
+<span class="font-body text-on-surface-variant" style="">Нажмите для интерактивного просмотра</span>
+</div>
+<iframe class="w-full h-full relative z-0" src="about:blank" title="3D Tour Placeholder"></iframe>
+</div>
+<div class="flex justify-center">
+<a class="px-8 py-4 bg-primary text-on-primary font-label font-medium text-lg rounded-lg hover:shadow-lg transition-colors shadow-md active:scale-95 duration-300" href="https://360tur.uz" style="">
+            Все работы
+        </a>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-3xl mx-auto px-8 py-24" id="faq">
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-12 text-center" style="">Частые Вопросы</h2>
+<div class="flex flex-col gap-4">
+<details class="group bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden transition-all duration-300" name="faq" style="">
+<summary class="flex justify-between items-center cursor-pointer p-6 font-headline font-bold text-lg text-on-surface hover:text-primary transition-colors" style="">
+                Сколько стоит тур?
+                <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300" data-icon="expand_more" style="">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body text-on-surface-variant text-base" style="">
+                Стоимость рассчитывается индивидуально в зависимости от площади объекта и количества необходимых панорам. Оставьте заявку, и мы подготовим для вас точный расчет.
+            </div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden transition-all duration-300" name="faq" style="">
+<summary class="flex justify-between items-center cursor-pointer p-6 font-headline font-bold text-lg text-on-surface hover:text-primary transition-colors" style="">
+                Сколько времени занимает съёмка?
+                <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300" data-icon="expand_more" style="">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body text-on-surface-variant text-base" style="">
+                В среднем, съемка объекта площадью 100-200 кв.м занимает от 1 до 3 часов. Точное время зависит от сложности планировки и готовности помещения.
+            </div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden transition-all duration-300" name="faq" style="">
+<summary class="flex justify-between items-center cursor-pointer p-6 font-headline font-bold text-lg text-on-surface hover:text-primary transition-colors" style="">
+                Что если объект большой / многоэтажный?
+                <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300" data-icon="expand_more" style="">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body text-on-surface-variant text-base" style="">
+                Мы легко справляемся с крупными и многоэтажными объектами. В туре будет реализована удобная навигация между этажами и зонами, чтобы пользователи не заблудились.
+            </div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden transition-all duration-300" name="faq" style="">
+<summary class="flex justify-between items-center cursor-pointer p-6 font-headline font-bold text-lg text-on-surface hover:text-primary transition-colors" style="">
+                Включено ли размещение (хостинг) в цену?
+                <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300" data-icon="expand_more" style="">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body text-on-surface-variant text-base" style="">
+                Да, первый год размещения тура на наших надежных серверах включен в стоимость. В дальнейшем продление хостинга оплачивается по минимальному тарифу.
+            </div>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden transition-all duration-300" name="faq" style="">
+<summary class="flex justify-between items-center cursor-pointer p-6 font-headline font-bold text-lg text-on-surface hover:text-primary transition-colors" style="">
+                Можно ли встроить тур на сайт клиента?
+                <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform duration-300" data-icon="expand_more" style="">expand_more</span>
+</summary>
+<div class="px-6 pb-6 font-body text-on-surface-variant text-base" style="">
+                Безусловно! Вы получите готовый код (iframe), который ваш разработчик сможет интегрировать на любой сайт буквально за несколько минут.
+            </div>
+</details>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="flex flex-col gap-6">
+<div class="text-xl font-black text-on-surface font-headline" style="">
+                    360tur.uz
+                </div>
+<p class="font-label text-sm text-on-surface/70" style="">
+                    © 2024 360tur.uz. All rights reserved.
+                </p>
+<div class="flex gap-4">
+<a class="text-on-surface/70 hover:text-primary transition-colors" href="#" style="">
+<span class="material-symbols-outlined" data-icon="language" style="">language</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-on-surface" style="">Links</h4>
+<a class="font-label text-sm text-on-surface/70 hover:text-primary transition-colors" href="#" style="">Privacy Policy</a>
+<a class="font-label text-sm text-on-surface/70 hover:text-primary transition-colors" href="#" style="">Terms of Service</a>
+<a class="font-label text-sm text-on-surface/70 hover:text-primary transition-colors" href="#" style="">Legal</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-on-surface" style="">Contact</h4>
+<span class="font-label text-sm text-on-surface/70" style="">info@360tur.uz</span>
+<span class="font-label text-sm text-on-surface/70" style="">+998 90 000 00 00</span>
+</div>
+</div>
+</footer>
+<script>
+  window.addEventListener('click', function(e) {
+    const switcher = document.getElementById('language-switcher');
+    const dropdown = document.getElementById('lang-dropdown');
+    if (switcher && !switcher.contains(e.target)) {
+      dropdown.classList.add('hidden');
+    }
+  });
+
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  };
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      // 1. Remove active styles from all links
+      document.querySelectorAll('.nav-link').forEach(l => {
+        l.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1', 'opacity-100');
+        l.classList.add('opacity-70');
+      });
+
+      // 2. Add active styles to clicked link
+      this.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-primary', 'pb-1', 'opacity-100');
+      this.classList.remove('opacity-70');
+
+      // 3. Smooth scroll handling with offset for fixed header
+      const targetId = this.getAttribute('href');
+      if (targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          history.pushState(null, null, targetId);
+        }
+      }
+    });
+  });
+</script></body></html>
