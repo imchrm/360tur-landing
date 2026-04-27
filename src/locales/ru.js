@@ -100,7 +100,7 @@ export default {
     ],
   },
   footer: {
-    copyright: '© 2024 360tur.uz. Все права защищены.',
+    copyright: '© 2026 360tur.uz. Все права защищены.',
     linksTitle: 'Документы',
     privacy: 'Политика конфиденциальности',
     terms: 'Условия использования',
