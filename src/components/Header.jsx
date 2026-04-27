@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext.jsx';
+import ContactsDropdown from './ContactsDropdown.jsx';
 import LanguageSwitcher from './LanguageSwitcher.jsx';
 import Navigation from './Navigation.jsx';
 
@@ -65,13 +66,7 @@ export default function Header() {
           >
             {t('nav.portfolio')}
           </a>
-          <a
-            href="#contact"
-            onClick={(e) => handleNavigate(e, 'contact')}
-            className="px-6 py-2 bg-primary text-on-primary font-label font-medium rounded-lg hover:bg-secondary-a transition-colors shadow-md active:scale-95"
-          >
-            {t('nav.contacts')}
-          </a>
+          <ContactsDropdown />
         </div>
       </div>
     </header>
