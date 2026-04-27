@@ -27,13 +27,18 @@
 
 ```
 360tur-landing/
+├── design/        # HTML-исходники дизайна (Stitch-экспорт)
 ├── docs/          # Документация и контекст сессий
-├── musor/         # Шаблон-источник (будет заменён при миграции)
-├── package.json   # корневой (создан npm init -y)
+├── musor/         # Старый шаблон (референс на время миграции)
+├── src/           # Исходный код приложения (React + Vite)
+├── index.html     # Vite entry HTML
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
 └── README.md
 ```
 
-На текущем этапе рабочий код и конфиги сборщика находятся в `musor/` — это шаблон, из которого будет мигрирован проект. См. [`docs/TODO.md`](docs/TODO.md) — Приоритет 1 и 2.
+Подробная структура — в [`docs/CONTEXT.md`](docs/CONTEXT.md).
 
 ## Документация
 
@@ -45,17 +50,16 @@
 
 ## Разработка
 
-На данном этапе dev-сервер и сборка запускаются из шаблона:
+Из корня репозитория:
 
 ```bash
-cd musor
 npm install
-npm run dev       # dev-сервер
-npm run build     # production-сборка
-npm run preview   # локальный просмотр сборки
+npm run dev       # dev-сервер (Vite, http://localhost:5173)
+npm run build     # production-сборка → dist/
+npm run preview   # локальный просмотр production-сборки
 ```
 
-После миграции проекта из `musor/` в корень эти команды будут доступны на уровне корня репозитория.
+Шаблон `musor/` остаётся в репозитории как референс на время миграции и будет удалён после стабилизации новой структуры (см. `docs/TODO.md`).
 
 ## Ветки
 
