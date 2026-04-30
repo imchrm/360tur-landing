@@ -2,7 +2,7 @@ import { useLanguage } from '../contexts/LanguageContext.jsx';
 import Icon from './Icon.jsx';
 
 // TODO: подставить реальный URL встраиваемого тура с 360tur.uz
-const TOUR_EMBED_URL = '';
+const TOUR_EMBED_URL = '/tours/neoclassicalbedroom/index.html';
 
 export default function Portfolio() {
   const { t } = useLanguage();
