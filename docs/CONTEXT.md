@@ -64,12 +64,18 @@
 │       └── landing-design-brief-questionnaire.md
 ├── musor/                        # Старый шаблон (источник для миграции, постепенно удаляется)
 │   └── ...
+├── public/                       # Статические ассеты (Vite раздаёт от корня сайта)
+│   ├── imgs/                     # фотографии (например, фон Hero)
+│   │   └── bedroom_cam_001_res_4096x2048_00.jpg
+│   └── tours/                    # встраиваемые Marzipano-туры (по одному в подпапке)
+│       └── neoclassicalbedroom/  # пример демо-тура (img/, tiles/, vendor/, data.js, index.html, …)
 ├── src/                          # Исходный код приложения (React + Vite)
 │   ├── App.jsx                   # роутер, маршруты
 │   ├── main.jsx                  # точка входа, монтирование, провайдеры
-│   ├── index.css                 # tailwind директивы + global styles
+│   ├── index.css                 # tailwind директивы + global styles + @layer utilities (.text-glow-surface)
 │   ├── components/
 │   │   ├── AboutCards.jsx
+│   │   ├── ContactsDropdown.jsx  # hover-popup в хедере: Telegram / Instagram / Facebook
 │   │   ├── FAQ.jsx
 │   │   ├── Footer.jsx
 │   │   ├── Header.jsx
@@ -77,14 +83,14 @@
 │   │   ├── Icon.jsx              # обёртка над Material Symbols Outlined
 │   │   ├── LanguageSwitcher.jsx
 │   │   ├── Navigation.jsx
-│   │   ├── Portfolio.jsx
+│   │   ├── Portfolio.jsx         # iframe Marzipano-тура из /tours/...
 │   │   └── Services.jsx
 │   ├── contexts/
-│   │   └── LanguageContext.jsx   # i18n: detect, persist, t()
+│   │   └── LanguageContext.jsx   # i18n: detect, persist, t() — DEFAULT_LANG='uz'
 │   ├── locales/
 │   │   ├── en.js                 # пока ре-экспорт ru.js (TODO: перевод)
 │   │   ├── ru.js
-│   │   └── uz.js                 # пока ре-экспорт ru.js (TODO: перевод)
+│   │   └── uz.js                 # переведено вручную
 │   └── pages/
 │       └── Home.jsx              # композиция всех секций
 ├── .gitignore
@@ -94,7 +100,7 @@
 ├── package-lock.json
 ├── postcss.config.js
 ├── tailwind.config.js
-└── vite.config.js
+└── vite.config.js                # server.host=true, preview.host=true (доступ из локальной сети)
 ```
 
 ## Ветки [стабильный]
@@ -106,25 +112,23 @@
 
 ## Текущее состояние [ОБНОВЛЯТЬ]
 
-- В корне репозитория развёрнут рабочий **React + Vite + Tailwind**-проект: `package.json` со скриптами `dev / build / preview`, конфиги (`vite.config.js`, `tailwind.config.js`, `postcss.config.js`), `index.html`-entry для Vite.
-- Реализована **i18n-инфраструктура**: `src/contexts/LanguageContext.jsx` с автодетектом по `Accept-Language`, `localStorage`-персистентностью и хуком `useLanguage()`; `src/locales/{ru,uz,en}.js` (uz/en временно ре-экспортируют ru до перевода).
-- HTML из `design/site_01/code.html` разнесён по компонентам: `Header / Navigation / LanguageSwitcher / Hero / AboutCards / Services / Portfolio / FAQ / Footer`. Все тексты вынесены в `ru.js`.
-- Маршрутизация: `BrowserRouter`, единственный маршрут `/` → `pages/Home.jsx`. Заглушки под `/privacy`, `/terms` — TODO.
+- В корне репозитория развёрнут рабочий **React + Vite + Tailwind**-проект; `npm run dev` слушает `0.0.0.0` (`server.host: true`), доступен из локальной сети.
+- **i18n** работает: `LanguageContext` с автодетектом по `Accept-Language`, `localStorage`-персистентностью, хуком `useLanguage()`. `DEFAULT_LANG = 'uz'`. Переводы: `ru.js` и `uz.js` (вручную); `en.js` пока ре-экспортирует `ru.js`.
+- **Хедер**: бренд `360tur.uz` и пункты меню — активная подсветка по hash + плавный скролл с offset, hover-scale на ссылках. Кнопка «Контакты» — `ContactsDropdown` (hover/tap popup: Telegram bot, Instagram, Facebook; ссылки в новой вкладке).
+- **Hero**: фон — локальный JPG из `public/imgs/`; добавлены градиент-overlay (читаемость заголовка) и утилита `.text-glow-surface`. Старый «viewer placeholder» закомментирован.
+- **Portfolio**: подключён iframe демо-тура Marzipano из `public/tours/neoclassicalbedroom/index.html`. Конвенция: каждый тур — отдельная подпапка в `public/tours/`.
+- **Маршрутизация**: `BrowserRouter`, единственный маршрут `/` → `pages/Home.jsx`. Заглушки под `/privacy`, `/terms` — TODO.
 - Старый шаблон `musor/` остаётся как референс; будет удалён после стабилизации миграции.
-- Открытые вопросы централизованы в `TODO.md`.
-- Известные баги (из дизайна, исправляются отдельно): нечитаемый Hero-заголовок поверх фото, кнопка «Контакты» (нужна реализация в виде dropdown), портфолио без реального iframe, отсутствие реальных ссылок на соцсети и номеров телефона.
+- Открытые вопросы — в `TODO.md`.
 
 ## Следующий шаг [ОБНОВЛЯТЬ]
 
-Закрыть зафиксированные баги дизайна:
-- Сделать Hero-заголовок читаемым на фоне фото (text-shadow / glow / overlay).
-- Реализовать выпадающее меню «Контакты» в хедере (телефон + мессенджеры).
-- Подставить реальные ссылки на соцсети и номера телефонов.
-- Подключить рабочий встраиваемый тур (`Portfolio` iframe) с `360tur.uz`.
-
-Параллельно:
-- Перевести строки на `uz` и `en` (пока локали ре-экспортируют `ru`).
-- Завершить Приоритет 3 (брендинг — favicon, meta-теги).
+- Подставить реальные данные (плейсхолдеры в коде помечены TODO):
+  - URL соцсетей в `ContactsDropdown.jsx` и `Footer.jsx`;
+  - реальные номера телефонов в `tel:`-ссылках Hero и Footer.
+- Завершить Приоритет 3 (брендинг): `favicon`, расширенные meta-теги (`description`, OG, hreflang, Schema.org `LocalBusiness`).
+- Перевести `en.js` (сейчас ре-экспортирует `ru.js`).
+- Приоритет 6: реализовать недостающие секции (HowWeWork, Testimonials, About с миссией/счётчиками).
 
 ---
 

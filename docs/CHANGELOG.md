@@ -4,6 +4,37 @@
 
 ---
 
+## 2026-04-30 — Доводка дизайна, Marzipano-демо, LAN-доступ, синхронизация docs
+
+**Hero**
+- Включён градиент-overlay (`from-surface via-surface/5 to-transparent`) поверх фото фона.
+- Добавлена утилита `.text-glow-surface` (белый text-shadow в три слоя) в `src/index.css` под `@layer utilities`; применена к `<h1>` и `<p>` Hero для читаемости поверх фото.
+- `HERO_BG_URL` переключён на локальный файл `/imgs/bedroom_cam_001_res_4096x2048_00.jpg` (файл перенесён из `assets/imgs/` в `public/imgs/`).
+- Закомментирован «viewer placeholder» (визуальный индикатор справа). Подзаголовок Hero обновлён в `ru.js` («Профессионально, быстро и по разумной цене»).
+
+**Header / Navigation**
+- В `Header.jsx` поднята активная секция (`active`) — синхронизируется с `window.location.hash` (хуки на `hashchange` + `popstate`); клики делают `preventDefault`, плавный `scrollTo` с offset 80 px и `pushState`.
+- Бренд `360tur.uz` теперь тоже участвует в active-логике (целевой якорь `#main`).
+- В `Navigation.jsx` активная ссылка стилизуется `text-primary font-bold`; на всех ссылках — `hover:scale-105 transition-all duration-300`.
+- Кнопка «Контакты» вынесена в новый компонент `src/components/ContactsDropdown.jsx`: outline-стиль (border-primary, прозрачный фон) с chevron, hover-popup (mouseenter/mouseleave + click-toggle для мобильных + outside-click для закрытия). Пункты сверху вниз: **Telegram bot**, **Instagram**, **Facebook** (открываются в новой вкладке).
+
+**i18n**
+- `DEFAULT_LANG` в `LanguageContext.jsx` изменён на `'uz'`.
+- Полный перевод словаря в `src/locales/uz.js`. `en.js` пока ре-экспортирует `ru.js`.
+- Год в `footer.copyright` обновлён до `2026`.
+
+**Portfolio + Marzipano**
+- Принято архитектурное решение: демо-туры Marzipano встраиваются через `iframe` из `public/tours/<name>/`. Каждый тур — отдельная подпапка со своим Marzipano-vendor, tiles, `data.js`, `index.html`.
+- В `Portfolio.jsx` подключён демо-тур: `TOUR_EMBED_URL = '/tours/neoclassicalbedroom/index.html'`.
+
+**Vite**
+- `vite.config.js`: добавлены `server.host: true` и блок `preview { host: true, port: 4173 }` — dev и preview-серверы доступны из локальной сети.
+
+**Docs (sync)**
+- `TODO.md`: закрыты пункты Приоритета 4 (Hero readability, ContactsDropdown, Portfolio iframe) и Приоритета 5 (Hero image; формулировка задачи скорректирована — выбран `public/`, а не `src/assets/`).
+- `CONTEXT.md`: обновлено дерево репозитория (`public/imgs/`, `public/tours/`, `ContactsDropdown.jsx`, `vite.config.js` host); переписаны разделы «Текущее состояние» и «Следующий шаг».
+- `ARCHITECTURE.md`: исправлен `index.jsx` → `main.jsx`; раздел «Ассеты» обновлён под актуальные `public/imgs/`, `public/tours/`; в раздел «CSS» добавлена заметка про `@layer utilities`; в таблицу решений добавлены 4 новых пункта (Marzipano-iframe, тяжёлая статика, кастомные утилиты, LAN-доступ).
+
 ## 2026-04-19 — Развёртка React + Vite проекта в корне, импорт дизайна из Stitch
 
 **Build setup:**
