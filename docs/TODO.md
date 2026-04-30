@@ -27,16 +27,16 @@ React + Vite + Tailwind проект развёрнут в корне репоз
 
 ## Приоритет 4 — Доводка дизайна (баги после Stitch-импорта)
 
-- [ ] Hero: сделать заголовок читаемым на фоне изображения (text-shadow / glow / полупрозрачный overlay)
-- [ ] Header: реализовать выпадающее меню «Контакты» (hover на десктопе, tap на мобильных) с телефоном и мессенджерами
-- [ ] Footer: подставить реальные ссылки на соцсети (Instagram / Facebook / Telegram-канал) — нужны URL от клиента
+- [x] Hero: сделать заголовок читаемым на фоне изображения — добавлены градиент-overlay (`from-surface via-surface/5 to-transparent`) и утилита `.text-glow-surface` в `src/index.css`
+- [x] Header: реализовано выпадающее меню «Контакты» (hover на десктопе, tap на мобильных) — `src/components/ContactsDropdown.jsx` с пунктами Telegram bot / Instagram / Facebook
+- [ ] Footer: подставить реальные ссылки на соцсети (Instagram / Facebook / Telegram-канал) — нужны URL от клиента (плейсхолдер `language` иконка пока на месте)
 - [ ] Подставить реальные номера телефонов в `tel:`-ссылках (Hero, Footer)
-- [ ] Portfolio: подключить рабочий iframe реального тура с `360tur.uz`
+- [x] Portfolio: подключён iframe демо-тура Marzipano (`/tours/neoclassicalbedroom/index.html`) из `public/tours/`
 
 ## Приоритет 5 — Контент
 
-- [ ] Заменить картинку Hero (использовать `design/site_01/room00.png` или превью реального тура; перенести в `src/assets/`)
-- [ ] Перевести строки локалей `uz` и `en` (сейчас ре-экспортируют `ru`)
+- [x] Заменить картинку Hero — файл `public/imgs/bedroom_cam_001_res_4096x2048_00.jpg`, `HERO_BG_URL = '/imgs/bedroom_cam_001_res_4096x2048_00.jpg'`. (Файл размещён в `public/`, а не в `src/assets/`, как было в исходной формулировке: 3 МБ JPG нецелесообразно прогонять через бандлер.)
+- [ ] Перевести строки локалей `uz` и `en` (`uz.js` уже переведён вручную, `en.js` пока ре-экспортирует `ru.js`)
 - [ ] Уточнить тексты миссии, FAQ-ответов, описаний услуг с клиентом
 - [ ] Обновить контактные данные (телефон, соцсети, email, адрес)
 
