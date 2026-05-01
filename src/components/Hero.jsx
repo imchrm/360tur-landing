@@ -54,7 +54,7 @@ export default function Hero() {
               {t('hero.portfolioCta')}
             </a>
             <div className="flex gap-2 ml-4">
-              {/* TODO: ссылки на мессенджеры (Telegram / WhatsApp / Messenger) */}
+              {/* TODO: ссылки на мессенджеры (Telegram / WhatsApp / Instagram) */}
               <a
                 href="#"
                 className="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors"
