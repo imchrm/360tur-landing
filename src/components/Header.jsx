@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext.jsx';
-import ContactsDropdown from './ContactsDropdown.jsx';
+import Icon from './Icon.jsx';
 import LanguageSwitcher from './LanguageSwitcher.jsx';
 import Navigation from './Navigation.jsx';
 
 const HEADER_OFFSET_PX = 80;
+
+// TODO: подставить реальный номер от клиента
+const PHONE_TEL = 'tel:+998900000000';
 
 function getInitialActive() {
   if (typeof window === 'undefined') return 'main';
@@ -66,7 +69,14 @@ export default function Header() {
           >
             {t('nav.portfolio')}
           </a>
-          <ContactsDropdown />
+          <a
+            href={PHONE_TEL}
+            aria-label={t('footer.phoneDisplay')}
+            className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg border border-primary text-primary font-label font-medium bg-transparent hover:bg-primary/10 transition-colors"
+          >
+            <Icon name="call" />
+            <span className="hidden md:inline">{t('footer.phoneDisplay')}</span>
+          </a>
         </div>
       </div>
     </header>

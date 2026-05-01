@@ -54,20 +54,33 @@ export default function Hero() {
               {t('hero.portfolioCta')}
             </a>
             <div className="flex gap-2 ml-4">
-              {/* TODO: ссылки на мессенджеры (Telegram / WhatsApp / Messenger) */}
+              {/* TODO: подставить реальные URL мессенджеров от клиента */}
               <a
-                href="#"
+                href="https://t.me/username"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors"
                 aria-label="Telegram"
+              >
+                <Icon name="send" />
+              </a>
+              <a
+                href="https://wa.me/998900000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors"
+                aria-label="WhatsApp"
               >
                 <Icon name="chat" />
               </a>
               <a
-                href="#"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors"
-                aria-label="WhatsApp / Messenger"
+                aria-label="Instagram"
               >
-                <Icon name="forum" />
+                <Icon name="photo_camera" />
               </a>
             </div>
           </div>

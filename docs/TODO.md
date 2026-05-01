@@ -28,9 +28,11 @@ React + Vite + Tailwind проект развёрнут в корне репоз
 ## Приоритет 4 — Доводка дизайна (баги после Stitch-импорта)
 
 - [x] Hero: сделать заголовок читаемым на фоне изображения — добавлены градиент-overlay (`from-surface via-surface/5 to-transparent`) и утилита `.text-glow-surface` в `src/index.css`
-- [x] Header: реализовано выпадающее меню «Контакты» (hover на десктопе, tap на мобильных) — `src/components/ContactsDropdown.jsx` с пунктами Telegram bot / Instagram / Facebook
+- [x] Header «Контакты»: dropdown упразднён, заменён на кликабельный номер телефона (видимый номер на десктопе, иконка `call` на мобильных). Старый `ContactsDropdown.jsx` удалён.
+- [x] Hero: 3 icon-кнопки мессенджеров вместо двух — Telegram (`send`), WhatsApp (`chat`), Instagram (`photo_camera`); открываются в новой вкладке. URL-плейсхолдеры (`https://t.me/username`, `https://wa.me/998900000000`, `https://instagram.com`).
 - [ ] Footer: подставить реальные ссылки на соцсети (Instagram / Facebook / Telegram-канал) — нужны URL от клиента (плейсхолдер `language` иконка пока на месте)
-- [ ] Подставить реальные номера телефонов в `tel:`-ссылках (Hero, Footer)
+- [ ] Подставить реальные номера телефонов в `tel:`-ссылках (Header, Hero, Footer) — все три используют общий placeholder `+998 90 000 00 00`
+- [ ] Когда придут реальные URL соцсетей — добавить рядом с телефоном в Header icon-кнопки Telegram / WhatsApp / Instagram (контакт-бар)
 - [x] Portfolio: подключён iframe демо-тура Marzipano (`/tours/neoclassicalbedroom/index.html`) из `public/tours/`
 
 ## Приоритет 5 — Контент
