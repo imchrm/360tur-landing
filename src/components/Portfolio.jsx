@@ -16,7 +16,7 @@ export default function Portfolio() {
         {t('portfolio.description')}
       </p>
 
-      <div className="relative w-full max-w-5xl mx-auto aspect-video bg-surface-container-low rounded-xl overflow-hidden shadow-brand-soft mb-12 border border-outline-variant/30">
+      <div className="relative w-full mx-auto aspect-video bg-surface-container-low rounded-xl overflow-hidden shadow-brand-soft mb-12 border border-outline-variant/30">
         {TOUR_EMBED_URL ? (
           <iframe
             src={TOUR_EMBED_URL}
