@@ -73,11 +73,10 @@
 │   ├── index.css                 # tailwind директивы + global styles + @layer utilities (.text-glow-surface)
 │   ├── components/
 │   │   ├── AboutCards.jsx
-│   │   ├── ContactsDropdown.jsx  # hover-popup в хедере: Telegram / Instagram / Facebook
 │   │   ├── FAQ.jsx
 │   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── Hero.jsx
+│   │   ├── Header.jsx           # бренд + nav + LanguageSwitcher + Portfolio + кликабельный телефон
+│   │   ├── Hero.jsx             # CTA: Позвонить / Портфолио / Telegram-WhatsApp-Instagram
 │   │   ├── Icon.jsx              # обёртка над Material Symbols Outlined
 │   │   ├── LanguageSwitcher.jsx
 │   │   ├── Navigation.jsx
@@ -112,7 +111,7 @@
 
 - В корне репозитория развёрнут рабочий **React + Vite + Tailwind**-проект; `npm run dev` слушает `0.0.0.0` (`server.host: true`), доступен из локальной сети.
 - **i18n** работает: `LanguageContext` с автодетектом по `Accept-Language`, `localStorage`-персистентностью, хуком `useLanguage()`. `DEFAULT_LANG = 'uz'`. Переводы: `ru.js` и `uz.js` (вручную); `en.js` пока ре-экспортирует `ru.js`.
-- **Хедер**: бренд `360tur.uz` и пункты меню — активная подсветка по hash + плавный скролл с offset, hover-scale на ссылках. Кнопка «Контакты» — `ContactsDropdown` (hover/tap popup: Telegram bot, Instagram, Facebook; ссылки в новой вкладке).
+- **Хедер**: бренд `360tur.uz` и пункты меню — активная подсветка по hash + плавный скролл с offset, hover-scale на ссылках. Вместо «Контакты»-dropdown теперь видимый кликабельный номер телефона (`tel:` + иконка `call`); на мобильных свернут до иконки. Когда придут URL соцсетей — рядом с телефоном добавятся icon-кнопки Telegram / WhatsApp / Instagram.
 - **Hero**: фон — локальный JPG из `public/imgs/`; добавлены градиент-overlay (читаемость заголовка) и утилита `.text-glow-surface`. Старый «viewer placeholder» закомментирован.
 - **Portfolio**: подключён iframe демо-тура Marzipano из `public/tours/neoclassicalbedroom/index.html`. Конвенция: каждый тур — отдельная подпапка в `public/tours/`.
 - **Маршрутизация**: `BrowserRouter`, единственный маршрут `/` → `pages/Home.jsx`. Заглушки под `/privacy`, `/terms` — TODO.
