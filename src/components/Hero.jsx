@@ -1,5 +1,11 @@
 import { useLanguage } from '../contexts/LanguageContext.jsx';
 import Icon from './Icon.jsx';
+import {
+  TelegramIcon,
+  WhatsAppIcon,
+  InstagramIcon,
+  BRAND_BG,
+} from './MessengerIcons.jsx';
 
 // TODO: позже заменить на превью реального тура / монтаж Marzipano.
 // Файл лежит в `public/imgs/` — Vite раздаёт его как `/imgs/...` без бандлинга.
@@ -59,28 +65,31 @@ export default function Hero() {
                 href="https://t.me/username"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors"
                 aria-label="Telegram"
+                className="p-3 rounded-full text-white hover:shadow-lg hover:scale-110 transition-all"
+                style={{ backgroundColor: BRAND_BG.telegram }}
               >
-                <Icon name="send" />
+                <TelegramIcon className="w-6 h-6" />
               </a>
               <a
                 href="https://wa.me/998900000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors"
                 aria-label="WhatsApp"
+                className="p-3 rounded-full text-white hover:shadow-lg hover:scale-110 transition-all"
+                style={{ backgroundColor: BRAND_BG.whatsapp }}
               >
-                <Icon name="chat" />
+                <WhatsAppIcon className="w-6 h-6" />
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-primary text-on-primary rounded-full hover:shadow-lg transition-colors"
                 aria-label="Instagram"
+                className="p-3 rounded-full text-white hover:shadow-lg hover:scale-110 transition-all"
+                style={{ background: BRAND_BG.instagramGradient }}
               >
-                <Icon name="photo_camera" />
+                <InstagramIcon className="w-6 h-6" />
               </a>
             </div>
           </div>
