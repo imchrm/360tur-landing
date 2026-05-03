@@ -77,6 +77,7 @@
 │   │   ├── Footer.jsx
 │   │   ├── Header.jsx           # бренд + nav + LanguageSwitcher + Portfolio + кликабельный телефон
 │   │   ├── Hero.jsx             # CTA: Позвонить / Портфолио / Telegram-WhatsApp-Instagram
+│   │   ├── MessengerIcons.jsx    # inline SVG-глифы Telegram / WhatsApp / Instagram + BRAND_BG
 │   │   ├── Icon.jsx              # обёртка над Material Symbols Outlined
 │   │   ├── LanguageSwitcher.jsx
 │   │   ├── Navigation.jsx

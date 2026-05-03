@@ -4,6 +4,16 @@
 
 ---
 
+## 2026-04-30 — Брендовые SVG-иконки мессенджеров в Hero
+
+- Создан `src/components/MessengerIcons.jsx` — inline SVG-глифы `TelegramIcon`, `WhatsAppIcon`, `InstagramIcon` (без новых зависимостей) и константа `BRAND_BG` с фирменными цветами/градиентом.
+- В `Hero.jsx` три кружка мессенджеров переключены с `Icon` (Material Symbols, монохром primary) на брендовые SVG в круглых кнопках с фирменными цветами:
+  - Telegram — `#229ED9` (бренд-синий)
+  - WhatsApp — `#25D366` (бренд-зелёный)
+  - Instagram — официальный 5-стоповый градиент `linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)`
+- На hover добавлен лёгкий `scale-110` (через `hover:scale-110 transition-all`).
+- `CONTEXT.md`: в дерево `src/components/` добавлен `MessengerIcons.jsx`.
+
 ## 2026-04-30 — Header «Контакты» переработан в кликабельный телефон, мессенджеры в Hero
 
 **Header**
