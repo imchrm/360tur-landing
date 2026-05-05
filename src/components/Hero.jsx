@@ -9,7 +9,7 @@ import {
 
 // TODO: позже заменить на превью реального тура / монтаж Marzipano.
 // Файл лежит в `public/imgs/` — Vite раздаёт его как `/imgs/...` без бандлинга.
-const HERO_BG_URL = '/imgs/bedroom_cam_001_res_4096x2048_00.jpg';
+const HERO_BG_URL = 'imgs/bedroom_cam_001_res_4096x2048_00.jpg';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 flex items-center justify-center bg-surface-container-low">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url("${HERO_BG_URL}")` }}
+          style={{ backgroundImage: `url("${import.meta.env.BASE_URL}${HERO_BG_URL}")` }}
           role="img"
           aria-label="Modern luxury interior preview"
         />

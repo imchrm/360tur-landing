@@ -2,7 +2,7 @@ import { useLanguage } from '../contexts/LanguageContext.jsx';
 import Icon from './Icon.jsx';
 
 // TODO: подставить реальный URL встраиваемого тура с 360tur.uz
-const TOUR_EMBED_URL = '/tours/neoclassicalbedroom/index.html';
+const TOUR_EMBED_URL = 'tours/neoclassicalbedroom/index.html';
 
 export default function Portfolio() {
   const { t } = useLanguage();
@@ -19,7 +19,7 @@ export default function Portfolio() {
       <div className="relative w-full mx-auto aspect-video bg-surface-container-low rounded-xl overflow-hidden shadow-brand-soft mb-12 border border-outline-variant/30">
         {TOUR_EMBED_URL ? (
           <iframe
-            src={TOUR_EMBED_URL}
+            src={`${import.meta.env.BASE_URL}${TOUR_EMBED_URL}`}
             title="3D Tour"
             className="w-full h-full"
             allowFullScreen
