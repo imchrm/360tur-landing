@@ -112,4 +112,14 @@ export default {
   langSwitcher: {
     label: 'Til',
   },
+  tours: {
+    neoclassicalbedroom: {
+      title: 'Neoklassik uslubdagi yotoqxona',
+    },
+  },
+  portfolioCarousel: {
+    prev: 'Oldingi tur',
+    next: 'Keyingi tur',
+    selectTour: 'Turni tanlang',
+  },
 };

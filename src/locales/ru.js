@@ -112,4 +112,14 @@ export default {
   langSwitcher: {
     label: 'Язык',
   },
+  tours: {
+    neoclassicalbedroom: {
+      title: 'Спальня в неоклассическом стиле',
+    },
+  },
+  portfolioCarousel: {
+    prev: 'Предыдущий тур',
+    next: 'Следующий тур',
+    selectTour: 'Выбрать тур',
+  },
 };

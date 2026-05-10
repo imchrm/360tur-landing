@@ -81,10 +81,12 @@
 │   │   ├── LanguageSwitcher.jsx
 │   │   ├── MessengerIcons.jsx    # inline SVG-глифы Telegram / WhatsApp / Instagram + BRAND_BG
 │   │   ├── Navigation.jsx
-│   │   ├── Portfolio.jsx         # iframe Marzipano-тура из /tours/...
+│   │   ├── Portfolio.jsx         # карусель Marzipano-туров: один активный iframe + миниатюры/точки
 │   │   └── Services.jsx
 │   ├── contexts/
 │   │   └── LanguageContext.jsx   # i18n: detect, persist, t() — DEFAULT_LANG='uz'
+│   ├── data/
+│   │   └── tours.js              # массив TOURS — данные карусели Portfolio
 │   ├── locales/
 │   │   ├── en.js                 # переведено вручную
 │   │   ├── ru.js
@@ -115,18 +117,18 @@
 - **i18n** работает: `LanguageContext` с автодетектом по `Accept-Language`, `localStorage`-персистентностью, хуком `useLanguage()`. `DEFAULT_LANG = 'uz'`. Все три словаря (`ru.js`, `uz.js`, `en.js`) — переведены вручную.
 - **Хедер**: бренд `360tur.uz` и пункты меню — активная подсветка по hash + плавный скролл с offset, hover-scale на ссылках. Вместо «Контакты»-dropdown — видимый кликабельный номер телефона (`tel:` + иконка `call`); на мобильных свернут до иконки. Когда придут URL соцсетей — рядом с телефоном добавятся icon-кнопки Telegram / WhatsApp / Instagram.
 - **Hero**: фон — локальный JPG из `public/imgs/`; добавлены градиент-overlay (читаемость заголовка) и утилита `.text-glow-surface`. Старый «viewer placeholder» закомментирован. Три кнопки мессенджеров используют брендовые SVG (`MessengerIcons.jsx`) и фирменные цвета (Telegram `#229ED9`, WhatsApp `#25D366`, Instagram — официальный 5-стоповый градиент).
-- **Portfolio**: подключён iframe демо-тура Marzipano из `public/tours/neoclassicalbedroom/index.html` (через префикс `BASE_URL`). Конвенция: каждый тур — отдельная подпапка в `public/tours/`.
+- **Portfolio**: карусель Marzipano-туров. В DOM держится **только активный** iframe (через `key={tour.id}` — старый размонтируется при смене), чтобы не плодить копии плеера и tile-загрузок. Управление: стрелки `←` / `→` (с `disabled` на границах), клавиатура (`ArrowLeft` / `ArrowRight` при фокусе секции), миниатюры на `md+` или точки на `<md`. Данные туров — `src/data/tours.js`; названия — в локалях (`tours.<id>.title`); тип берётся из `services.industries` (переиспользование локализованных лейблов отраслей). Превью — из `tiles/<sceneId>/preview.jpg` каждого тура. На старте — 1 рабочий тур (`neoclassicalbedroom`); планируется ещё 2.
 - **Маршрутизация**: `BrowserRouter` с `basename={import.meta.env.BASE_URL}`, единственный маршрут `/` → `pages/Home.jsx`. Заглушки под `/privacy`, `/terms` — TODO.
 - Старый шаблон `musor/` удалён (миграция стабилизирована; история доступна в git).
 - Открытые вопросы — в `TODO.md`.
 
 ## Следующий шаг [ОБНОВЛЯТЬ]
 
-- Создать карусель для секции Portfolio с демо-турами Marzipano, как описано в одном из пунктов в Приоритет 4 — Доводка дизайна.
+- Добавить ещё 2 Marzipano-тура в `public/tours/<slug>/` и зарегистрировать их в `src/data/tours.js` (+ `tours.<slug>.title` в локалях).
 - Подставить реальные данные (плейсхолдеры в коде помечены TODO):
   - URL соцсетей в `Footer.jsx`;
   - реальные номера телефонов в `tel:`-ссылках Hero и Footer.
-- Завершить Приоритет 4 (брендинг): `favicon`, расширенные meta-теги (`description`, OG, hreflang, Schema.org `LocalBusiness`).
+- Завершить Приоритет 3 (брендинг): `favicon`, расширенные meta-теги (`description`, OG, hreflang, Schema.org `LocalBusiness`).
 
 ---
 

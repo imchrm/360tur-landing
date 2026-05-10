@@ -112,4 +112,14 @@ export default {
   langSwitcher: {
     label: 'Язык',
   },
+  tours: {
+    neoclassicalbedroom: {
+      title: 'Neoclassical-style bedroom',
+    },
+  },
+  portfolioCarousel: {
+    prev: 'Previous tour',
+    next: 'Next tour',
+    selectTour: 'Select tour',
+  },
 };
