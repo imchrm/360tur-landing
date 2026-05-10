@@ -107,7 +107,7 @@ export default {
     legal: 'Правовая информация',
     contactTitle: 'Контакты',
     email: 'info@360tur.uz',
-    phoneDisplay: '+998 90 000 00 00',
+    phoneDisplay: '+998 9 360 360 11',
   },
   langSwitcher: {
     label: 'Язык',

@@ -107,7 +107,7 @@ export default {
     legal: "Huquqiy ma'lumotlar",
     contactTitle: 'Kontaktlar',
     email: 'info@360tur.uz',
-    phoneDisplay: '+998 90 000 00 00',
+    phoneDisplay: '+998 9 360 360 11',
   },
   langSwitcher: {
     label: 'Til',
@@ -119,7 +119,7 @@ export default {
     neo_1: {
       title: 'Neoklassik uslubdagi yotoqxona 1',
     },
-    
+
   },
   portfolioCarousel: {
     prev: 'Oldingi tur',
