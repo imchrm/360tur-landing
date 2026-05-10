@@ -100,9 +100,9 @@ export default function Portfolio() {
         <h3 className="font-headline text-2xl font-bold text-on-surface">
           {t(tour.titleKey)}
         </h3>
-        <p className="font-label text-sm text-on-surface-variant uppercase tracking-wider mt-1">
+        {/* <p className="font-label text-sm text-on-surface-variant uppercase tracking-wider mt-1">
           {getTypeLabel(t, tour.typeKey)}
-        </p>
+        </p> */}
       </div>
 
       {hasMultiple && (
@@ -133,12 +133,12 @@ export default function Portfolio() {
                       />
                     </div>
                     <div className="px-3 py-2 text-left bg-surface-container-lowest">
-                      <div className="font-label text-xs font-medium text-on-surface line-clamp-1">
+                      <div className="font-label text-xs font-medium text-on-surface line-clamp-2">
                         {t(item.titleKey)}
                       </div>
-                      <div className="font-label text-[10px] text-on-surface-variant uppercase tracking-wider line-clamp-1">
+                      {/* <div className="font-label text-[10px] text-on-surface-variant uppercase tracking-wider line-clamp-1">
                         {getTypeLabel(t, item.typeKey)}
-                      </div>
+                      </div> */}
                     </div>
                   </button>
                 </li>
@@ -167,7 +167,7 @@ export default function Portfolio() {
         </>
       )}
 
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <a
           href="https://360tur.uz"
           target="_blank"
@@ -176,7 +176,7 @@ export default function Portfolio() {
         >
           {t('portfolio.allWorksCta')}
         </a>
-      </div>
+      </div> */}
     </section>
   );
 }
