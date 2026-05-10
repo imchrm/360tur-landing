@@ -20,5 +20,19 @@ export const TOURS = [
     titleKey: 'tours.neoclassicalbedroom.title',
     typeKey: 'real_estate',
   },
+   {
+    id: 'neo_1',
+    embedSrc: 'tours/neo_1/index.html',
+    previewSrc: 'tours/neo_1/tiles/0-bedroom-left/preview.jpg',
+    titleKey: 'tours.neo_1.title',
+    typeKey: 'real_estate',
+  },
+   {
+    id: 'neo_2',
+    embedSrc: 'tours/neo_2/index.html',
+    previewSrc: 'tours/neo_2/tiles/0-bedroom-left/preview.jpg',
+    titleKey: 'tours.neo_2.title',
+    typeKey: 'real_estate',
+  },
   // TODO: ещё 2 тура планируются — добавить, когда экспорты будут в public/tours/
 ];
