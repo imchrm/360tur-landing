@@ -1,4 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext.jsx';
+import { toTelHref } from '../utils/phone.js';
 import Icon from './Icon.jsx';
 
 export default function Footer() {
@@ -52,9 +53,9 @@ export default function Footer() {
           >
             {t('footer.email')}
           </a>
-          {/* TODO: подставить реальный номер */}
+          {/* TODO: подставить реальный номер (значение в локалях footer.phoneDisplay) */}
           <a
-            href="tel:+998900000000"
+            href={toTelHref(t('footer.phoneDisplay'))}
             className="font-label text-sm text-on-surface/70 hover:text-primary transition-colors"
           >
             {t('footer.phoneDisplay')}

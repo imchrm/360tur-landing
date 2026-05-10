@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-05-01 — Единый источник телефона: `footer.phoneDisplay` + `toTelHref()`
+
+- Новый `src/utils/phone.js`: функция `toTelHref(displayPhone)` — собирает `tel:`-href из отображаемого номера, удаляя всё кроме цифр и ведущего `+`.
+- `Hero.jsx`, `Header.jsx`, `Footer.jsx`: захардкоженные `tel:+998900000000` заменены на `toTelHref(t('footer.phoneDisplay'))`. В `Header.jsx` удалена константа `PHONE_TEL`.
+- `TODO.md` (Приоритет 4): пункт про подстановку реального номера переформулирован — теперь достаточно изменить значение `footer.phoneDisplay` в локалях (`ru.js`/`uz.js`/`en.js`), все три места подтянут номер автоматически.
+
 ## 2026-05-01 — Карусель Marzipano-туров в Portfolio
 
 **Новые файлы**
