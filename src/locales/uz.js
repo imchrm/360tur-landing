@@ -116,6 +116,10 @@ export default {
     neoclassicalbedroom: {
       title: 'Neoklassik uslubdagi yotoqxona',
     },
+    neo_1: {
+      title: 'Neoklassik uslubdagi yotoqxona 1',
+    },
+    
   },
   portfolioCarousel: {
     prev: 'Oldingi tur',

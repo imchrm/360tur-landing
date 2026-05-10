@@ -116,6 +116,12 @@ export default {
     neoclassicalbedroom: {
       title: 'Neoclassical-style bedroom',
     },
+    neo_1: {
+      title: 'Neoclassical-style bedroom 1',
+    },
+    neo_2: {
+      title: 'Neoclassical-style bedroom 2',
+    },
   },
   portfolioCarousel: {
     prev: 'Previous tour',
