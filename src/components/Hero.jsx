@@ -10,7 +10,7 @@ import {
 // TODO: позже заменить на превью реального тура / монтаж Marzipano.
 // Файл лежит в `public/imgs/` — Vite раздаёт его как `/imgs/...` без бандлинга.
 // const HERO_BG_URL = 'imgs/bedroom_cam_001_res_4096x2048_00.jpg';
-const HERO_BG_URL = 'imgs/Gemini_Generated_Image_n330ven330ven330.png';
+const HERO_BG_URL = 'imgs/interior_00.png';
 
 export default function Hero() {
   const { t } = useLanguage();
