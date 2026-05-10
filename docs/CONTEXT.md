@@ -121,12 +121,11 @@
 
 ## Следующий шаг [ОБНОВЛЯТЬ]
 
+- Создать карусель для секции Portfolio с демо-турами Marzipano, как описано в одном из пунктов в Приоритет 4 — Доводка дизайна.
 - Подставить реальные данные (плейсхолдеры в коде помечены TODO):
-  - URL соцсетей в `ContactsDropdown.jsx` и `Footer.jsx`;
+  - URL соцсетей в `Footer.jsx`;
   - реальные номера телефонов в `tel:`-ссылках Hero и Footer.
-- Завершить Приоритет 3 (брендинг): `favicon`, расширенные meta-теги (`description`, OG, hreflang, Schema.org `LocalBusiness`).
-- Перевести `en.js` (сейчас ре-экспортирует `ru.js`).
-- Приоритет 6: реализовать недостающие секции (HowWeWork, Testimonials, About с миссией/счётчиками).
+- Завершить Приоритет 4 (брендинг): `favicon`, расширенные meta-теги (`description`, OG, hreflang, Schema.org `LocalBusiness`).
 
 ---
 

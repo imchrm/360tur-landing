@@ -22,23 +22,23 @@ React + Vite + Tailwind проект развёрнут в корне репоз
 
 - [x] Обновить цветовую схему в `tailwind.config.js` (палитра из `DESIGN_BRIEF.md`)
 - [x] Обновить шрифты (Manrope для headline, Inter для body/label)
-- [ ] Заменить логотип и favicon (`public/`)
-- [ ] Обновить `<title>` и meta-теги в `index.html` (description, OG, hreflang, Schema.org `LocalBusiness`)
 
 ## Приоритет 4 — Доводка дизайна (баги после Stitch-импорта)
 
 - [x] Hero: сделать заголовок читаемым на фоне изображения — добавлены градиент-overlay (`from-surface via-surface/5 to-transparent`) и утилита `.text-glow-surface` в `src/index.css`
 - [x] Header «Контакты»: dropdown упразднён, заменён на кликабельный номер телефона (видимый номер на десктопе, иконка `call` на мобильных). Старый `ContactsDropdown.jsx` удалён.
 - [x] Hero: 3 icon-кнопки мессенджеров вместо двух — Telegram (`send`), WhatsApp (`chat`), Instagram (`photo_camera`); открываются в новой вкладке. URL-плейсхолдеры (`https://t.me/username`, `https://wa.me/998900000000`, `https://instagram.com`).
-- [ ] Footer: подставить реальные ссылки на соцсети (Instagram / Facebook / Telegram-канал) — нужны URL от клиента (плейсхолдер `language` иконка пока на месте)
-- [ ] Подставить реальные номера телефонов в `tel:`-ссылках (Header, Hero, Footer) — все три используют общий placeholder `+998 90 000 00 00`
-- [ ] Когда придут реальные URL соцсетей — добавить рядом с телефоном в Header icon-кнопки Telegram / WhatsApp / Instagram (контакт-бар)
 - [x] Portfolio: подключён iframe демо-тура Marzipano (`/tours/neoclassicalbedroom/index.html`) из `public/tours/`
+- [ ] Portfolio: создать карусель из нескольких демо-туров Marzipano
+- [ ] Обновить `<title>` и meta-теги в `index.html` (description, OG, hreflang, Schema.org `LocalBusiness`)
+- [ ] Footer: подставить реальные ссылки на соцсети (Instagram / Facebook / Telegram-канал) — нужны URL от клиента (плейсхолдер `language` иконка пока на месте)
+- [ ] Заменить логотип и favicon (`public/`)
+- [ ] Подставить реальные номера телефонов в `tel:`-ссылках (Header, Hero, Footer) — все три используют общий placeholder `+998 90 000 00 00`
 
 ## Приоритет 5 — Контент
 
 - [x] Заменить картинку Hero — файл `public/imgs/bedroom_cam_001_res_4096x2048_00.jpg`, `HERO_BG_URL = '/imgs/bedroom_cam_001_res_4096x2048_00.jpg'`. (Файл размещён в `public/`, а не в `src/assets/`, как было в исходной формулировке: 3 МБ JPG нецелесообразно прогонять через бандлер.)
-- [ ] Перевести строки локалей `uz` и `en` (`uz.js` уже переведён вручную, `en.js` пока ре-экспортирует `ru.js`)
+- [x] Перевести строки локалей `uz` и `en` — переведены вручную
 - [ ] Уточнить тексты миссии, FAQ-ответов, описаний услуг с клиентом
 - [ ] Обновить контактные данные (телефон, соцсети, email, адрес)
 
