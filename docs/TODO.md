@@ -33,7 +33,7 @@ React + Vite + Tailwind проект развёрнут в корне репоз
 - [ ] Обновить `<title>` и meta-теги в `index.html` (description, OG, hreflang, Schema.org `LocalBusiness`)
 - [ ] Footer: подставить реальные ссылки на соцсети (Instagram / Facebook / Telegram-канал) — нужны URL от клиента (плейсхолдер `language` иконка пока на месте)
 - [ ] Заменить логотип и favicon (`public/`)
-- [ ] Подставить реальные номера телефонов в `tel:`-ссылках (Header, Hero, Footer) — все три используют общий placeholder `+998 90 000 00 00`
+- [ ] Подставить реальный номер телефона — единственный источник истины: `footer.phoneDisplay` в `src/locales/{ru,uz,en}.js`. `Header.jsx`, `Hero.jsx` и `Footer.jsx` берут номер оттуда (отображение) и через `toTelHref()` (`src/utils/phone.js`) формируют `tel:`-ссылку. После замены значения в локалях все три места обновятся автоматически.
 
 ## Приоритет 5 — Контент
 

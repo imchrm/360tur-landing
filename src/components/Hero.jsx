@@ -1,4 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext.jsx';
+import { toTelHref } from '../utils/phone.js';
 import Icon from './Icon.jsx';
 import {
   TelegramIcon,
@@ -45,9 +46,9 @@ export default function Hero() {
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-wrap gap-4 items-center">
-            {/* TODO: подставить реальный номер */}
+            {/* TODO: подставить реальный номер (значение в локалях footer.phoneDisplay) */}
             <a
-              href="tel:+998900000000"
+              href={toTelHref(t('footer.phoneDisplay'))}
               className="px-8 py-4 bg-primary text-on-primary font-label font-medium rounded-lg hover:shadow-lg transition-all flex items-center gap-2"
             >
               <Icon name="call" />
