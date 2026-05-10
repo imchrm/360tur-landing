@@ -77,16 +77,16 @@
 │   │   ├── Footer.jsx
 │   │   ├── Header.jsx           # бренд + nav + LanguageSwitcher + Portfolio + кликабельный телефон
 │   │   ├── Hero.jsx             # CTA: Позвонить / Портфолио / Telegram-WhatsApp-Instagram
-│   │   ├── MessengerIcons.jsx    # inline SVG-глифы Telegram / WhatsApp / Instagram + BRAND_BG
 │   │   ├── Icon.jsx              # обёртка над Material Symbols Outlined
 │   │   ├── LanguageSwitcher.jsx
+│   │   ├── MessengerIcons.jsx    # inline SVG-глифы Telegram / WhatsApp / Instagram + BRAND_BG
 │   │   ├── Navigation.jsx
 │   │   ├── Portfolio.jsx         # iframe Marzipano-тура из /tours/...
 │   │   └── Services.jsx
 │   ├── contexts/
 │   │   └── LanguageContext.jsx   # i18n: detect, persist, t() — DEFAULT_LANG='uz'
 │   ├── locales/
-│   │   ├── en.js                 # пока ре-экспорт ru.js (TODO: перевод)
+│   │   ├── en.js                 # переведено вручную
 │   │   ├── ru.js
 │   │   └── uz.js                 # переведено вручную
 │   └── pages/
@@ -94,11 +94,11 @@
 ├── .gitignore
 ├── README.md
 ├── index.html                    # Vite entry HTML
-├── package.json
+├── package.json                  # скрипты: dev, build, build:vps, build:prod, preview
 ├── package-lock.json
 ├── postcss.config.js
 ├── tailwind.config.js
-└── vite.config.js                # server.host=true, preview.host=true (доступ из локальной сети)
+└── vite.config.js                # base из VITE_BASE_PATH; server/preview host=true (LAN-доступ)
 ```
 
 ## Ветки [стабильный]
@@ -111,21 +111,30 @@
 ## Текущее состояние [ОБНОВЛЯТЬ]
 
 - В корне репозитория развёрнут рабочий **React + Vite + Tailwind**-проект; `npm run dev` слушает `0.0.0.0` (`server.host: true`), доступен из локальной сети.
-- **i18n** работает: `LanguageContext` с автодетектом по `Accept-Language`, `localStorage`-персистентностью, хуком `useLanguage()`. `DEFAULT_LANG = 'uz'`. Переводы: `ru.js` и `uz.js` (вручную); `en.js` пока ре-экспортирует `ru.js`.
-- **Хедер**: бренд `360tur.uz` и пункты меню — активная подсветка по hash + плавный скролл с offset, hover-scale на ссылках. Вместо «Контакты»-dropdown теперь видимый кликабельный номер телефона (`tel:` + иконка `call`); на мобильных свернут до иконки. Когда придут URL соцсетей — рядом с телефоном добавятся icon-кнопки Telegram / WhatsApp / Instagram.
-- **Hero**: фон — локальный JPG из `public/imgs/`; добавлены градиент-overlay (читаемость заголовка) и утилита `.text-glow-surface`. Старый «viewer placeholder» закомментирован.
-- **Portfolio**: подключён iframe демо-тура Marzipano из `public/tours/neoclassicalbedroom/index.html`. Конвенция: каждый тур — отдельная подпапка в `public/tours/`.
-- **Маршрутизация**: `BrowserRouter`, единственный маршрут `/` → `pages/Home.jsx`. Заглушки под `/privacy`, `/terms` — TODO.
-- Старый шаблон `musor/` удалён (миграция стабилизирована; история доступна в git до коммита удаления).
+- **Build-варианты**: `npm run build` (корневой деплой), `npm run build:vps` (через `cross-env VITE_BASE_PATH=/virtualtour360/landing/` — деплой в подпапку на VPS), `npm run build:prod` (alias для `build`). Базовый путь читается из `VITE_BASE_PATH` в `vite.config.js` (`base`); `BrowserRouter` использует `basename={import.meta.env.BASE_URL}`; пути ассетов (`Hero` фон, `Portfolio` iframe) префиксуются через `${import.meta.env.BASE_URL}`.
+- **i18n** работает: `LanguageContext` с автодетектом по `Accept-Language`, `localStorage`-персистентностью, хуком `useLanguage()`. `DEFAULT_LANG = 'uz'`. Все три словаря (`ru.js`, `uz.js`, `en.js`) — переведены вручную.
+- **Хедер**: бренд `360tur.uz` и пункты меню — активная подсветка по hash + плавный скролл с offset, hover-scale на ссылках. Вместо «Контакты»-dropdown — видимый кликабельный номер телефона (`tel:` + иконка `call`); на мобильных свернут до иконки. Когда придут URL соцсетей — рядом с телефоном добавятся icon-кнопки Telegram / WhatsApp / Instagram.
+- **Hero**: фон — локальный JPG из `public/imgs/`; добавлены градиент-overlay (читаемость заголовка) и утилита `.text-glow-surface`. Старый «viewer placeholder» закомментирован. Три кнопки мессенджеров используют брендовые SVG (`MessengerIcons.jsx`) и фирменные цвета (Telegram `#229ED9`, WhatsApp `#25D366`, Instagram — официальный 5-стоповый градиент).
+- **Portfolio**: подключён iframe демо-тура Marzipano из `public/tours/neoclassicalbedroom/index.html` (через префикс `BASE_URL`). Конвенция: каждый тур — отдельная подпапка в `public/tours/`.
+- **Маршрутизация**: `BrowserRouter` с `basename={import.meta.env.BASE_URL}`, единственный маршрут `/` → `pages/Home.jsx`. Заглушки под `/privacy`, `/terms` — TODO.
+- Старый шаблон `musor/` удалён (миграция стабилизирована; история доступна в git).
 - Открытые вопросы — в `TODO.md`.
 
 ## Следующий шаг [ОБНОВЛЯТЬ]
 
 - Создать карусель для секции Portfolio с демо-турами Marzipano, как описано в одном из пунктов в Приоритет 4 — Доводка дизайна.
 - Подставить реальные данные (плейсхолдеры в коде помечены TODO):
+<<<<<<< HEAD
   - URL соцсетей в `Footer.jsx`;
   - реальные номера телефонов в `tel:`-ссылках Hero и Footer.
 - Завершить Приоритет 4 (брендинг): `favicon`, расширенные meta-теги (`description`, OG, hreflang, Schema.org `LocalBusiness`).
+=======
+  - URL соцсетей в `Hero.jsx` (Telegram / WhatsApp / Instagram) и в `Footer.jsx`;
+  - реальные номера телефонов в `tel:`-ссылках Header, Hero, Footer.
+- Завершить Приоритет 3 (брендинг): `favicon`, расширенные meta-теги (`description`, OG, hreflang, Schema.org `LocalBusiness`).
+- Приоритет 6: реализовать недостающие секции (HowWeWork, Testimonials, About с миссией/счётчиками).
+- Приоритет 9: финализировать пайплайн деплоя на VPS (build:vps уже работает; остаётся настроить выгрузку `dist/` на хост и протестировать SPA-fallback по подпути).
+>>>>>>> 3226bf08b9a5215cbe2fa1e46135d7175765f275
 
 ---
 
