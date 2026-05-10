@@ -29,7 +29,7 @@ React + Vite + Tailwind проект развёрнут в корне репоз
 - [x] Header «Контакты»: dropdown упразднён, заменён на кликабельный номер телефона (видимый номер на десктопе, иконка `call` на мобильных). Старый `ContactsDropdown.jsx` удалён.
 - [x] Hero: 3 icon-кнопки мессенджеров вместо двух — Telegram (`send`), WhatsApp (`chat`), Instagram (`photo_camera`); открываются в новой вкладке. URL-плейсхолдеры (`https://t.me/username`, `https://wa.me/998900000000`, `https://instagram.com`).
 - [x] Portfolio: подключён iframe демо-тура Marzipano (`/tours/neoclassicalbedroom/index.html`) из `public/tours/`
-- [ ] Portfolio: создать карусель из нескольких демо-туров Marzipano
+- [x] Portfolio: реализована карусель Marzipano-туров — `src/data/tours.js` (массив `TOURS`); в DOM активный iframe только один (`key={tour.id}` → размонтирование при смене); управление стрелками `←`/`→` (с `disabled` на границах), клавиатурой `ArrowLeft`/`ArrowRight` при фокусе секции, миниатюрами на `md+` или точками-индикаторами на `<md`. Тип тура переиспользует уже локализованные лейблы из `services.industries`. На старте — 1 рабочий тур (`neoclassicalbedroom`); добавление ещё двух — задача в Приоритете 5.
 - [ ] Обновить `<title>` и meta-теги в `index.html` (description, OG, hreflang, Schema.org `LocalBusiness`)
 - [ ] Footer: подставить реальные ссылки на соцсети (Instagram / Facebook / Telegram-канал) — нужны URL от клиента (плейсхолдер `language` иконка пока на месте)
 - [ ] Заменить логотип и favicon (`public/`)
@@ -41,6 +41,7 @@ React + Vite + Tailwind проект развёрнут в корне репоз
 - [x] Перевести строки локалей `uz` и `en` — переведены вручную
 - [ ] Уточнить тексты миссии, FAQ-ответов, описаний услуг с клиентом
 - [ ] Обновить контактные данные (телефон, соцсети, email, адрес)
+- [ ] Добавить ещё 2 Marzipano-тура: положить экспорты в `public/tours/<slug>/`, зарегистрировать в `src/data/tours.js`, добавить `tours.<slug>.title` в `ru.js`/`uz.js`/`en.js`
 
 ## Приоритет 6 — Недостающие секции (по `DESIGN_BRIEF.md`)
 
