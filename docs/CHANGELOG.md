@@ -4,6 +4,22 @@
 
 ---
 
+## 2026-05-01 — VPS-деплой в подпуть, полная локализация EN
+
+**Деплой и базовый путь**
+- `vite.config.js`: добавлен `base: process.env.VITE_BASE_PATH ?? '/'` — базовый путь приложения параметризуется переменной окружения.
+- `package.json`: новые скрипты `build:vps` (`cross-env VITE_BASE_PATH=/virtualtour360/landing/ vite build`) и `build:prod` (alias для `vite build`); добавлена dev-зависимость `cross-env` (для совместимости Windows-PowerShell ↔ bash).
+- `src/main.jsx`: `BrowserRouter` теперь инициализируется с `basename={import.meta.env.BASE_URL}`.
+- `src/components/Hero.jsx` и `src/components/Portfolio.jsx`: пути к ассетам в `public/` префиксуются `${import.meta.env.BASE_URL}` и записаны без ведущего слеша (`'imgs/...'`, `'tours/.../index.html'`).
+
+**Локализация**
+- `src/locales/en.js` — полный ручной перевод (раньше ре-экспортировал `ru.js`).
+
+**Docs (sync)**
+- `CONTEXT.md`: дерево репо обновлено (комментарии у `vite.config.js`, `package.json`, `en.js`); раздел «Текущее состояние» расширен пунктом про варианты сборки и базовый путь; «Следующий шаг» — задача про перевод `en.js` снята, добавлен пункт про финализацию VPS-пайплайна.
+- `TODO.md`: Приоритет 5 — пункт про перевод `uz`/`en` закрыт `[x]`. Приоритет 9 — частично закрыт: выбрана платформа (VPS-подпуть), реализована параметризация `VITE_BASE_PATH`; остался деплой `dist/` на сервер и проверка SPA-fallback.
+- `ARCHITECTURE.md`: новый раздел «Деплой и базовый путь» (механика `VITE_BASE_PATH`, таблица npm-скриптов, требование SPA-fallback); раздел «Маршрутизация» дополнен про `basename`; раздел «Ассеты» дополнен правилом про префикс `BASE_URL`; в таблицу решений добавлены 2 новых пункта (брендовые SVG-иконки мессенджеров, параметризация базового пути).
+
 ## 2026-04-30 — Брендовые SVG-иконки мессенджеров в Hero
 
 - Создан `src/components/MessengerIcons.jsx` — inline SVG-глифы `TelegramIcon`, `WhatsAppIcon`, `InstagramIcon` (без новых зависимостей) и константа `BRAND_BG` с фирменными цветами/градиентом.
