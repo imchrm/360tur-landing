@@ -6,7 +6,7 @@ export default function AboutCards() {
   const cards = t('about.cards');
 
   return (
-    <section id="about" className="bg-surface-container-low py-20">
+    <section id="about" className="bg-surface-container-low py-12">
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card) => (
