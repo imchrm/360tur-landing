@@ -21,10 +21,10 @@ export const TOURS = [
     typeKey: 'real_estate',
   },
    {
-    id: 'appartment_1',
-    embedSrc: 'tours/appartment_1/index.html',
-    previewSrc: 'tours/appartment_1/tiles/0-hall/preview.jpg',
-    titleKey: 'tours.appartment_1.title',
+    id: 'apartment_1',
+    embedSrc: 'tours/apartment_1/index.html',
+    previewSrc: 'tours/apartment_1/tiles/0-hall/preview.jpg',
+    titleKey: 'tours.apartment_1.title',
     typeKey: 'real_estate',
   },
    {
