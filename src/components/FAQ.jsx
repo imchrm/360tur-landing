@@ -6,7 +6,7 @@ export default function FAQ() {
   const items = t('faq.items');
 
   return (
-    <section id="faq" className="max-w-3xl mx-auto px-12">
+    <section id="faq" className="max-w-3xl mx-auto px-12 py-4 md:py-4 lg:py-4">
       <h2 className="font-headline text-4xl font-extrabold text-on-surface mb-12 text-center">
         {t('faq.title')}
       </h2>

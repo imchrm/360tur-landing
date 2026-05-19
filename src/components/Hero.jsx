@@ -38,7 +38,7 @@ export default function Hero() {
         </div> */}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 py-16 md:py-24 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 py-4 md:py-4 lg:py-4 w-full">
         <div className="max-w-2xl space-y-8">
           <h1 className="font-headline text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-primary text-glow-surface">
             {t('hero.title')}

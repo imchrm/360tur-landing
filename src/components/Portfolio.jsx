@@ -54,8 +54,7 @@ export default function Portfolio() {
       id="portfolio"
       ref={sectionRef}
       tabIndex={hasMultiple ? 0 : -1}
-      className="max-w-7xl mx-auto px-8 py-12 outline-none"
-    >
+      className="max-w-7xl mx-auto px-8 py-16 md:py-4 lg:py-4 outline-none">
       <h2 className="font-headline text-4xl font-extrabold text-on-surface mb-6 text-center">
         {t('portfolio.title')}
       </h2>

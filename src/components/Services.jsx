@@ -7,7 +7,7 @@ export default function Services() {
   const industries = t('services.industries');
 
   return (
-    <section id="services" className="max-w-7xl mx-auto px-8 py-12">
+    <section id="services" className="max-w-7xl mx-auto px-8 py-4 md:py-4 lg:py-4">
       <h2 className="font-headline text-4xl font-extrabold text-on-surface mb-16 text-center">
         {t('services.title')}
       </h2>

@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="bg-surface-container-low border-t border-outline-variant/30">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-12 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-4 md:py-4 lg:py-8 max-w-7xl mx-auto">
         <div className="flex flex-col gap-6">
           <div className="text-xl font-black text-on-surface font-headline">360tur.uz</div>
           <p className="font-label text-sm text-on-surface/70">{t('footer.copyright')}</p>
