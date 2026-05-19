@@ -17,6 +17,7 @@ export default {
     viewerPlaceholder: 'There will be an interactive 360° view here.',
   },
   about: {
+    title: 'About Us',
     cards: [
       {
         icon: 'bolt',
@@ -116,8 +117,8 @@ export default {
     neoclassicalbedroom: {
       title: 'Neoclassical-style bedroom',
     },
-    appartment_1: {
-      title: 'Appartment 1',
+    apartment_1: {
+      title: 'Apartment',
     },
     neo_2: {
       title: 'Neoclassical-style bedroom 2',

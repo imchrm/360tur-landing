@@ -17,6 +17,7 @@ export default {
     viewerPlaceholder: 'Bu yerda interaktiv 360° ko\'rinish bo\'ladi.',
   },
   about: {
+    title: 'Biz haqimizda',
     cards: [
       {
         icon: 'bolt',
@@ -116,8 +117,11 @@ export default {
     neoclassicalbedroom: {
       title: 'Neoklassik uslubdagi yotoqxona',
     },
-    neo_1: {
-      title: 'Neoklassik uslubdagi yotoqxona 1',
+    apartment_1: {
+      title: 'Kvartira',
+    },
+    neo_2: {
+      title: 'Neoklassik uslubdagi yotoqxona 2',
     },
 
   },

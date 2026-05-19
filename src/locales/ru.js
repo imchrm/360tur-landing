@@ -17,6 +17,7 @@ export default {
     viewerPlaceholder: 'Здесь будет интерактивный 360° просмотр',
   },
   about: {
+    title: 'О нас',
     cards: [
       {
         icon: 'bolt',
@@ -116,8 +117,8 @@ export default {
     neoclassicalbedroom: {
       title: 'Спальня в неоклассическом стиле',
     },
-    neo_1: {
-      title: 'Спальня в неоклассическом стиле 1',
+    apartment_1: {
+      title: 'Квартира',
     },
     neo_2: {
       title: 'Спальня в неоклассическом стиле 2',
